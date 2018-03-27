@@ -11,9 +11,7 @@ Latest binary Release : [![GitHub release](https://img.shields.io/github/release
       sudo apt-get install dfu-util u-boot-tools device-tree-compiler libssl1.0-dev mtools
       git clone --recursive https://github.com/analogdevicesinc/plutosdr-fw.git
       cd plutosdr-fw
-      export CROSS_COMPILE=arm-xilinx-linux-gnueabi-
-      export PATH=$PATH:/opt/Xilinx/SDK/2016.2/gnu/arm/lin/bin
-      export VIVADO_SETTINGS=/opt/Xilinx/Vivado/2016.4/settings64.sh
+      . ./prep.sh
       make
  
  ```
