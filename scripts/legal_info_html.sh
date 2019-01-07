@@ -164,10 +164,7 @@ package_table_items () {
 				break
 			fi
 			tmp=$(curl -IsS $url)
-			if [ $(echo "$tmp" | head -1 | grep "301" | wc -l) -gt 0 ] ; then
-				url=$(echo "$tmp" | grep -i "Location:" | awk '{print $2}' | sed -e 's/^[ \t]*//;s/[ \t]*$//')
-				url=${url%$'\r'}
-			elif [ $(echo "$tmp" | head -1 | grep "302" | wc -l) -gt 0 ] ; then
+			if [ $(echo "$tmp" | head -1 | grep -E "301|302" | wc -l) -gt 0 ] ; then
 				url=$(echo "$tmp" | grep -i "Location:" | awk '{print $2}' | sed -e 's/^[ \t]*//;s/[ \t]*$//')
 				url=${url%$'\r'}
 			elif [ $(echo "$tmp" | head -1 | grep "404" | wc -l) -gt 0 ] ; then
