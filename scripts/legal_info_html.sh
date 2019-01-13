@@ -174,6 +174,7 @@ package_table_items () {
 			else
 				echo unknown error while trying ${url}
 				echo "${tmp}"
+				break
 			fi
 		done
 	fi
